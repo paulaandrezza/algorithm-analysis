@@ -10,6 +10,13 @@ void randomArray(int v[], int LENGTH)
     v[i] = rand() % 1000;
 }
 
+void invertedArray(int v[], int LENGTH)
+{
+  int i, j;
+  for (i = 0, j = LENGTH; i < LENGTH; i++, j--)
+    v[i] = j;
+}
+
 void copyArray(int source[], int destination[], int LENGTH)
 {
   int i;
