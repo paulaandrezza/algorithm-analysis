@@ -10,10 +10,17 @@ void randomArray(int v[], int LENGTH)
     v[i] = rand() % 1000;
 }
 
+void copyArray(int source[], int destination[], int LENGTH)
+{
+  int i;
+  for (i = 0; i < LENGTH; i++)
+    destination[i] = source[i];
+}
+
 void printArray(int v[], int LENGTH)
 {
   int i;
   for (i = 0; i < LENGTH; i++)
     printf("%d ", v[i]);
-  printf("\n");
+  printf("\n\n");
 }

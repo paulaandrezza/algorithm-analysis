@@ -3,20 +3,47 @@
 #include "insertion.c"
 #include "selection.c"
 
-#define LENGTH 10
+void test(int originalArray[], int LENGTH)
+{
+  int testArray[LENGTH];
+  printf("bubleSort\n");
+  copyArray(originalArray, testArray, LENGTH);
+  printArray(testArray, LENGTH);
+  bubbleSort(testArray, LENGTH);
+  printArray(testArray, LENGTH);
+
+  printf("insertion\n");
+  copyArray(originalArray, testArray, LENGTH);
+  printArray(testArray, LENGTH);
+  insertion(testArray, LENGTH);
+  printArray(testArray, LENGTH);
+
+  printf("selection\n");
+  copyArray(originalArray, testArray, LENGTH);
+  printArray(testArray, LENGTH);
+  selection(testArray, LENGTH);
+  printArray(testArray, LENGTH);
+}
 
 int main()
 {
-  int v[LENGTH];
+  int LENGTH;
+  LENGTH = 100000;
+  int originalArray[LENGTH];
 
-  randomArray(v, LENGTH);
-  printArray(v, LENGTH);
+  randomArray(originalArray, LENGTH);
 
-  // bubbleSort(v, LENGTH);
-  // insertion(v, LENGTH);
-  selection(v, LENGTH);
+  LENGTH = 1000;
+  printf("Pequeno: 1000 elementos\n");
+  test(originalArray, LENGTH);
 
-  printArray(v, LENGTH);
+  LENGTH = 10000;
+  printf(" Médio: 10.000 elementos\n");
+  test(originalArray, LENGTH);
+
+  LENGTH = 100000;
+  printf("Grande 100.000 elementos\n");
+  test(originalArray, LENGTH);
 
   return 0;
 }
