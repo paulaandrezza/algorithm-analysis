@@ -1,0 +1,19 @@
+Array Type,Algorithm,Dataset Size,Time Spent (seconds),Operations
+Random,bubbleSort,1000,0.003000,254210
+Random,insertion,1000,0.000000,254210
+Random,selection,1000,0.002000,5290
+Random,bubbleSort,10000,0.236000,24871370
+Random,insertion,10000,0.051000,24871370
+Random,selection,10000,0.098000,62510
+Random,bubbleSort,100000,31.982000,2516432883
+Random,insertion,100000,5.266000,2516432883
+Random,selection,100000,9.467000,652218
+Inverted,bubbleSort,1000,0.002000,499500
+Inverted,insertion,1000,0.001000,499500
+Inverted,selection,1000,0.001000,250000
+Inverted,bubbleSort,10000,0.239000,49995000
+Inverted,insertion,10000,0.103000,49995000
+Inverted,selection,10000,0.100000,25000000
+Inverted,bubbleSort,100000,23.997000,704982704
+Inverted,insertion,100000,10.473000,704982704
+Inverted,selection,100000,10.070000,2500000000

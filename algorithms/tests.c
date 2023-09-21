@@ -1,12 +1,16 @@
 #include <time.h>
 #include <string.h>
+#include <stdio.h>
 
 #include "bubbleSort.c"
 #include "insertion.c"
 #include "selection.c"
 
-void test(int originalArray[], int LENGTH)
+void test(int originalArray[], int LENGTH, char arrayType[])
 {
+  FILE *csvFile;
+  csvFile = fopen("test_data.csv", "a");
+
   clock_t start, end;
   int testArray[LENGTH], i;
   double times[3];
@@ -37,24 +41,22 @@ void test(int originalArray[], int LENGTH)
 
   for (i = 0; i < 3; i++)
   {
-    printf("%s: Time Spent: %f Operations: %u\n", algorithms[i], times[i], operations[i]);
+    fprintf(csvFile, "%s,%s,%d,%f,%u\n", arrayType, algorithms[i], LENGTH, times[i], operations[i]);
   }
-  printf("\n");
+
+  fclose(csvFile);
 }
 
-void runTests(int originalArray[])
+void runTests(int originalArray[], char arrayType[])
 {
   int LENGTH;
 
   LENGTH = 1000;
-  printf("Pequeno: 1000 elementos\n");
-  test(originalArray, LENGTH);
+  test(originalArray, LENGTH, arrayType);
 
   LENGTH = 10000;
-  printf("Médio: 10.000 elementos\n");
-  test(originalArray, LENGTH);
+  test(originalArray, LENGTH, arrayType);
 
   LENGTH = 100000;
-  printf("Grande 100.000 elementos\n");
-  test(originalArray, LENGTH);
+  test(originalArray, LENGTH, arrayType);
 }
